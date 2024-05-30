@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Predict - Brand</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css', h='d7bfed1f92b7d0e3baa10f4d62f514fc') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='assets/css/Montserrat.css', h='15e6981add52f8adaa3862d0b508ec9d') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='assets/css/baguetteBox.min.css', h='cd0f778148efbd9a6da168a5fc542cea') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='assets/css/vanilla-zoom.min.css', h='b1904b38fb5db9c70aa0a0b48e09a39c') }}">
+</head>
+
+<body>
+<div></div>
+<nav class="navbar navbar-expand-lg fixed-top bg-body clean-navbar navbar-light">
+    <div class="container"><a class="navbar-brand logo" href="/">Logo</a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
+                class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about-us">About Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main class="page contact-us-page">
+    <section class="clean-block clean-form dark">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info"><span style="color: rgb(0, 108, 0);">What crop suits you the most?</span></h2>
+                <p>You only need to input the values as they're shown, then press "Predict", and wait for your
+                    result.</p>
+            </div>
+            <form action="{{ url_for('submit') }}" method="post">
+                <div class="mb-3"><label class="form-label" for="nitrogen">Nitrogen</label><input class="form-control"
+                                                                                                  type="text"
+                                                                                                  id="nitrogen" name="n"
+                                                                                                  data-bs-theme="light">
+                </div>
+                <div class="mb-3"><label class="form-label" for="phosphorus">Phosphorus</label><input
+                        class="form-control" type="text" id="phosphorus" name="p" data-bs-theme="light"></div>
+                <div class="mb-3"><label class="form-label" for="potassium">Potassium</label><input class="form-control"
+                                                                                                    type="text"
+                                                                                                    id="potassium"
+                                                                                                    data-bs-theme="light"
+                                                                                                    name="k"></div>
+                <div class="mb-3"><label class="form-label" for="ph">pH Level</label><input class="form-control"
+                                                                                            type="text" id="ph"
+                                                                                            name="ph"
+                                                                                            data-bs-theme="light"></div>
+                <div class="mb-3"><label class="form-label" for="wilaya">Wilaya</label><select class="form-select"
+                                                                                               id="wilaya" name="wilaya"
+                                                                                               data-bs-theme="light">
+                    <option value="0" selected="">Choose Wilaya</option>
+                    <option value="Adrar">Adrar</option>
+                    <option value="Chlef">Chlef</option>
+                    <option value="Laghouat">Laghouat</option>
+                    <option value="Oum El Bouaghi">Oum El Bouaghi</option>
+                    <option value="Batna">Batna</option>
+                    <option value="Béjaïa">Béjaïa</option>
+                    <option value="Biskra">Biskra</option>
+                    <option value="Béchar">Béchar</option>
+                    <option value="Blida">Blida</option>
+                    <option value="Bouïra">Bouïra</option>
+                    <option value="Tamanrasset">Tamanrasset</option>
+                    <option value="Tébessa">Tébessa</option>
+                    <option value="Tlemcan">Tlemcen</option>
+                    <option value="Tiaret">Tiaret</option>
+                    <option value="Tizi Ouzou">Tizi Ouzou</option>
+                    <option value="Algiers">Algiers</option>
+                    <option value="Djelfa">Djelfa</option>
+                    <option value="Jijel">Jijel</option>
+                    <option value="Sétif">Sétif</option>
+                    <option value="Saïda">Saïda</option>
+                    <option value="Skikda">Skikda</option>
+                    <option value="Sidi Bel Abbès">Sidi Bel Abbès</option>
+                    <option value="Annaba">Annaba</option>
+                    <option value="Guelma">Guelma</option>
+                    <option value="Constantine">Constantine</option>
+                    <option value="Médéa">Médéa</option>
+                    <option value="Mostaganem">Mostaganem</option>
+                    <option value="M'Sila">M'Sila</option>
+                    <option value="Mascara">Mascara</option>
+                    <option value="Ouargla">Ouargla</option>
+                    <option value="Oran">Oran</option>
+                    <option value="El Bayadh">El Bayadh</option>
+                    <option value="Illizi">Illizi</option>
+                    <option value="Bordj Bou Arréridj">Bordj Bou Arréridj</option>
+                    <option value="Boumerdès">Boumerdès</option>
+                    <option value="El Tarf">El Tarf</option>
+                    <option value="Tindouf">Tindouf</option>
+                    <option value="Tissemsilt">Tissemsilt</option>
+                    <option value="El Oued">El Oued</option>
+                    <option value="Khenchela">Khenchela</option>
+                    <option value="Souk Ahras">Souk Ahras</option>
+                    <option value="Tipaza">Tipaza</option>
+                    <option value="Mila">Mila</option>
+                    <option value="Aïn Defla">Aïn Defla</option>
+                    <option value="Naâma">Naâma</option>
+                    <option value="Aïn Témouchent">Aïn Témouchent</option>
+                    <option value="Ghardaïa">Ghardaïa</option>
+                    <option value="Relizane">Relizane</option>
+                    <option value="Timimoun">Timimoun</option>
+                    <option value="Bordj Badji Mokhtar">Bordj Badji Mokhtar</option>
+                    <option value="Ouled Djellal">Ouled Djellal</option>
+                    <option value="Béni Abbès">Béni Abbès</option>
+                    <option value="Ain Salah">Ain Salah</option>
+                    <option value="Ain Guezzam">Ain Guzzam</option>
+                    <option value="Touggourt">Touggourt</option>
+                    <option value="Djanet">Djanet</option>
+                    <option value="El M'Ghair">El M'Ghair</option>
+                    <option value="El Menia">El Menia</option>
+                </select></div>
+                <div class="mb-3" style="text-align: center;">
+                    <button class="btn btn-primary" type="submit"
+                            style="margin: 0px;margin-left: 0px;margin-right: 242px;background: #32cd32;border-color: var(--bs-btn-disabled-color);">
+                        Predict
+                    </button>
+                    <button class="btn btn-primary" type="reset"
+                            style="border-color: var(--bs-btn-disabled-color);background: #006c00;">Reset
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main><!-- Start: Footer Dark -->
+<footer class="page-footer dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h5>Home</h5>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">
+                <h5>About us</h5>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li><a href="/about-us">About us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <p>© 2024 Copyright Text</p>
+    </div>
+</footer><!-- End: Footer Dark -->
+<script src="{{ url_for('static', filename='assets/js/jquery-3.7.1.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='assets/js/baguetteBox.min.js', h='add865daffd8b6e10264279f48d8ac50') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/vanilla-zoom.js', h='6a37ea9c996b05f763161c73127d66bc') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/theme.js', h='a083aeb15550c5e1266c666e8a5846d9') }}"></script>
+<script>
+$(document).ready(function() {
+    {% if show_modal %}
+    $('#resultModal').modal('show');
+    {% endif %}
+});
+</script>
+{% if show_modal %}
+<div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="resultModalLabel">Prediction Result</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% if predicted_crop %}
+                <p>The recommended crop for you is: <strong>{{ predicted_crop }}</strong></p>
+                {% else %}
+                <p>No prediction available.</p>
+                {% endif %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+</body>
+
+</html>

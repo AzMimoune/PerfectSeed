@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css', h='d7bfed1f92b7d0e3baa10f4d62f514fc') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Montserrat.css', h='15e6981add52f8adaa3862d0b508ec9d') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/baguetteBox.min.css', h='cd0f778148efbd9a6da168a5fc542cea') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vanilla-zoom.min.css', h='b1904b38fb5db9c70aa0a0b48e09a39c') }}">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top bg-body clean-navbar navbar-light">
+        <div class="container"><a class="navbar-brand logo" href="/">Logo</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about-us">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page landing-page">
+        <section class="clean-block clean-hero" style="color: rgba(255,255,255,0);background: url(&quot;{{ url_for('static', filename='assets/img/background-image.jpg', h='eb1f3437b96979628244765c88beaecc') }}&quot;) center / cover no-repeat;">
+            <div class="text">
+                <h2 style="color: var(--bs-emphasis-color);">Welcome to&nbsp;<span style="color: rgb(0, 108, 0);">[App Name]</span></h2>
+                <p style="color: var(--bs-emphasis-color);">Looking to boost your harvests?<br><span style="color: rgb(0, 108, 0);">[App Name]</span> analyzes your fields to suggest the perfect crops.</p><a class="btn btn-outline-light btn-lg" role="button" href="/predict">Start Predicting</a>
+            </div>
+        </section>
+        <section class="clean-block clean-info dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info"><span style="color: rgb(50, 205, 50);">Info</span></h2>
+                    <p style="text-align: justify;font-size: 15px;">Our app&nbsp;provides data-driven crop recommendations tailored to your unique fields and environment. Maximize yields, increase efficiency, and embrace sustainable practices with our cutting-edge agronomic technology.</p>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-6"><img class="img-thumbnail" src="{{ url_for('static', filename='assets/img/png.png', h='101bde6cd26402641d20eebfcd0b5e4f') }}"></div>
+                    <div class="col-md-6 text-center">
+                        <h3 style="text-align: center;">Say goodbye to one-size-fits-all crop planning.</h3>
+                        <div class="getting-started-info">
+                            <p>Our app's field-specific analysis ensures you receive customized recommendations for maximizing yields and profitability.</p>
+                        </div><a class="btn btn-outline-primary btn-lg" role="button" href="/predict">Predict Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main><!-- Start: Footer Dark -->
+    <footer class="page-footer dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Home</h5>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li><a href="/about-us">About us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2024 Copyright Text</p>
+        </div>
+    </footer><!-- End: Footer Dark -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/js/baguetteBox.min.js', h='add865daffd8b6e10264279f48d8ac50') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vanilla-zoom.js', h='6a37ea9c996b05f763161c73127d66bc') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/theme.js', h='a083aeb15550c5e1266c666e8a5846d9') }}"></script>
+</body>
+
+</html>

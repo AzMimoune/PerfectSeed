@@ -18,7 +18,9 @@
 <body>
 <div></div>
 <nav class="navbar navbar-expand-lg fixed-top bg-body clean-navbar navbar-light">
-    <div class="container"><a class="navbar-brand logo" href="/">Logo</a>
+    <div class="container"><a class="navbar-brand logo" href="/"><img
+            src="{{ url_for('static', filename='assets/img/logo/PerfectSeed-logo.png') }}" width="129" height="80"
+            alt=""></a>
         <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
                 class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1">
@@ -161,11 +163,11 @@
 <script src="{{ url_for('static', filename='assets/js/vanilla-zoom.js', h='6a37ea9c996b05f763161c73127d66bc') }}"></script>
 <script src="{{ url_for('static', filename='assets/js/theme.js', h='a083aeb15550c5e1266c666e8a5846d9') }}"></script>
 <script>
-$(document).ready(function() {
-    {% if show_modal %}
-    $('#resultModal').modal('show');
-    {% endif %}
-});
+    $(document).ready(function() {
+        {% if show_modal %}
+        $('#resultModal').modal('show');
+        {% endif %}
+    });
 </script>
 {% if show_modal %}
 <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel"

@@ -1,0 +1,9 @@
+geopy
+joblib
+numpy
+openmeteo_requests
+pandas
+Flask
+requests_cache
+lightgbm
+scikit-learn

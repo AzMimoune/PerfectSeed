@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>About Us - Brand</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css', h='d7bfed1f92b7d0e3baa10f4d62f514fc') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='assets/css/Montserrat.css', h='15e6981add52f8adaa3862d0b508ec9d') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='assets/css/baguetteBox.min.css', h='cd0f778148efbd9a6da168a5fc542cea') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='assets/css/vanilla-zoom.min.css', h='b1904b38fb5db9c70aa0a0b48e09a39c') }}">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg fixed-top bg-body clean-navbar navbar-light">
+    <div class="container"><a class="navbar-brand logo" href="/"><img
+            src="{{ url_for('static', filename='assets/img/logo/PerfectSeed-logo.png') }}" width="129" height="80"
+            alt=""></a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
+                class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/about-us">About Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main class="page">
+    <section class="clean-block about-us">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info"><span style="color: rgb(50, 205, 50);">About Us</span></h2>
+                <p>A little insight about us, the creators of this app.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card text-center clean-card"><img class="card-img-top w-100 d-block"
+                                                                  src="{{ url_for('static', filename='assets/img/avatars/avatar1.jpg', h='2bf47f2c2deaed837d2490a2db0a7175') }}">
+                        <div class="card-body info">
+                            <h4 class="card-title">Abdelaziz MIMOUNE</h4>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i
+                                    class="icon-social-instagram text-danger"></i></a><a href="#"><i
+                                    class="icon-social-twitter text-info-emphasis"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card text-center clean-card"><img class="card-img-top w-100 d-block"
+                                                                  src="{{ url_for('static', filename='assets/img/avatars/avatar2.jpg', h='4178f5c706118a93c77520b6d0b30713') }}">
+                        <div class="card-body info">
+                            <h4 class="card-title">Farouk Lantri</h4>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i
+                                    class="icon-social-instagram text-danger"></i></a><a href="#"><i
+                                    class="icon-social-twitter text-info-emphasis"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main><!-- Start: Footer Dark -->
+<footer class="page-footer dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h5>Home</h5>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">
+                <h5>About us</h5>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li><a href="/about-us">About us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <p>© 2024 Copyright Text</p>
+    </div>
+</footer><!-- End: Footer Dark -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='assets/js/baguetteBox.min.js', h='add865daffd8b6e10264279f48d8ac50') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/vanilla-zoom.js', h='6a37ea9c996b05f763161c73127d66bc') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/theme.js', h='a083aeb15550c5e1266c666e8a5846d9') }}"></script>
+</body>
+
+</html>

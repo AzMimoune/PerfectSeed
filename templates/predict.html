@@ -181,11 +181,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                {% if predicted_crop %}
-                <p>The recommended crop for you is: <strong>{{ predicted_crop }}</strong></p>
-                {% else %}
-                <p>No prediction available.</p>
-                {% endif %}
+                <p>The recommended crops for you are: <strong>{{ predicted_crop }}</strong></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

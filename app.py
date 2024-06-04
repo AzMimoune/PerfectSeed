@@ -9,10 +9,14 @@ import requests_cache
 from flask import Flask, render_template, request
 from geopy.geocoders import Nominatim
 from retry_requests import retry
+from operator import itemgetter
 import lightgbm
 import sklearn
 
 warnings.filterwarnings('ignore')
+# Load the model from the file
+model = joblib.load("static/model.pkl")
+unique_labels = model.classes_
 
 
 def get_coordinates(city_name, country_name):
@@ -24,7 +28,7 @@ def get_coordinates(city_name, country_name):
 
     try:
         # Attempt to geocode the query
-        location = geolocator.geocode(query)
+        location = geolocator.geocode(query, timeout=30)
 
         if location:
             # Return the coordinates
@@ -94,13 +98,25 @@ def get_precip_temp(longitude, latitude):
 
 
 def do_predict(array):
-    # Load the model from the file
-    model = joblib.load("static/model.pkl")
+    
 
     # Make predictions using the loaded model
-    pred = model.predict(array)
+    pred = model.predict_proba(array)
 
-    return pred
+    # Create a list of tuples with (crop, score)
+    crop_scores = []
+    for j, label in enumerate(unique_labels):
+        score = pred[0][j] * 100
+        if score > 0.1:
+            crop_scores.append((label, score))
+    
+    # Sort the list in descending order based on scores
+    crop_scores.sort(key=itemgetter(1), reverse=True)
+    
+    # Create the output string
+    output_str = ', '.join([f"{crop} ({score:.2f}%)" for crop, score in crop_scores])
+    
+    return output_str
 
 
 app = Flask(__name__)
@@ -136,7 +152,7 @@ def submit():
     # temp = 20.88
     # hum = 82.01
     # Call your function to predict the crop
-    pc = do_predict([[nitrogen, phosphorus, potassium, temp, hum, ph_level, rain]])[0]
+    pc = do_predict([[nitrogen, phosphorus, potassium, temp, hum, ph_level, rain]])
 
     # Render the same template with the predicted crop
     return render_template('predict.html', predicted_crop=pc, show_modal='true')
